@@ -4,7 +4,7 @@ A modern, responsive, and lightweight web application built with **Flask**, **SQ
 
 ## 🎥 Demo Video
 
-[![Watch the Demo](https://img.shields.io/badge/Play_Demo-Video-red?style=for-the-badge&logo=youtube)](YOUR_VIDEO_URL_HERE)
+[![Watch the Demo](https://img.shields.io/badge/Demo_Video-Google_Drive-blue?style=for-the-badge&logo=google-drive)](https://drive.google.com/drive/u/0/folders/1kCiuKJcrR_RQCXSU17ksKVqhQvPecT0S)
 
 ---
 
