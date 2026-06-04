@@ -2,6 +2,10 @@
 
 A modern, responsive, and lightweight web application built with **Flask**, **SQLAlchemy**, and **Bootstrap 5** that allows patients to manage appointments, browse medical departments, view specialist doctors, and book time slots dynamically.
 
+## 🎥 Demo Video
+
+[![Watch the Demo](https://img.shields.io/badge/Play_Demo-Video-red?style=for-the-badge&logo=youtube)](YOUR_VIDEO_URL_HERE)
+
 ---
 
 ## 🚀 Key Features
