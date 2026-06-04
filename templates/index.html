@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <h1>Welcome to Hospital Management System</h1>
+        <p class="lead">Your health is our priority. Book appointments with top specialists easily.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="{{ url_for('auth') }}" class="btn btn-light btn-lg px-4 me-md-2">
+                <i class="bi bi-person-circle me-2"></i>Login / Register
+            </a>
+            <a href="{{ url_for('book_appointment') }}" class="btn btn-outline-light btn-lg px-4">
+                <i class="bi bi-calendar-plus me-2"></i>Book Appointment
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center mb-5">
+            <h2 class="display-5">Our Departments</h2>
+            <p class="lead">We have specialized departments to cater to all your healthcare needs</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card department-card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-heart-pulse-fill" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h4>Cardiology</h4>
+                    <p>Heart and blood vessel specialists</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card department-card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-activity" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h4>Neurology</h4>
+                    <p>Brain and nervous system specialists</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card department-card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-emoji-smile-fill" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h4>Pediatrics</h4>
+                    <p>Children healthcare specialists</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card department-card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-bandaid-fill" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h4>Orthopedics</h4>
+                    <p>Bone and joint specialists</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card department-card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-droplet-fill" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h4>Dermatology</h4>
+                    <p>Skin and hair specialists</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card department-card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-eye-fill" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h4>Ophthalmology</h4>
+                    <p>Eye care specialists</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-md-12 text-center">
+            <h2 class="display-5">Why Choose Us?</h2>
+            <p class="lead">We provide the best healthcare services with experienced professionals</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-people-fill" style="font-size: 3rem; color: var(--success-color);"></i>
+                    </div>
+                    <h4>Experienced Doctors</h4>
+                    <p>Our team consists of highly qualified and experienced medical professionals</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-hospital" style="font-size: 3rem; color: var(--success-color);"></i>
+                    </div>
+                    <h4>Modern Facilities</h4>
+                    <p>State-of-the-art medical equipment and facilities for accurate diagnosis</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-clock-history" style="font-size: 3rem; color: var(--success-color);"></i>
+                    </div>
+                    <h4>24/7 Service</h4>
+                    <p>Round-the-clock medical assistance and emergency services</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

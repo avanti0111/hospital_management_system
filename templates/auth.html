@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="card">
+        <div class="card-header text-center">
+            <h3><i class="bi bi-person-circle me-2"></i>Welcome to Hospital Management</h3>
+        </div>
+        <div class="card-body">
+            <div class="auth-tabs">
+                <div class="auth-tab active" onclick="switchTab('login')">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                </div>
+                <div class="auth-tab" onclick="switchTab('register')">
+                    <i class="bi bi-person-plus me-2"></i>Register
+                </div>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active" method="POST" action="{{ url_for('auth') }}">
+                <input type="hidden" name="form_type" value="login">
+                
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="login_username" name="login_username" placeholder="Username" required>
+                    <label for="login_username">Username</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="login_password" name="login_password" placeholder="Password" required>
+                    <label for="login_password">Password</label>
+                </div>
+                
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Registration Form -->
+            <form id="register-form" class="auth-form" method="POST" action="{{ url_for('auth') }}">
+                <input type="hidden" name="form_type" value="register">
+                
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="register_username" name="register_username" placeholder="Username" required>
+                    <label for="register_username">Username</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="register_password" name="register_password" placeholder="Password" required>
+                    <label for="register_password">Password</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="register_full_name" name="register_full_name" placeholder="Full Name" required>
+                    <label for="register_full_name">Full Name</label>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="register_age" name="register_age" placeholder="Age" required>
+                            <label for="register_age">Age</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="register_gender" name="register_gender" required>
+                                <option value="" selected disabled>Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="register_gender">Gender</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="register_blood_group" name="register_blood_group" required>
+                        <option value="" selected disabled>Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                    <label for="register_blood_group">Blood Group</label>
+                </div>
+                
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-person-plus me-2"></i>Register
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTab(tab) {
+        // Update tab appearance
+        document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+        document.querySelector(`.auth-tab:nth-child(${tab === 'login' ? 1 : 2})`).classList.add('active');
+        
+        // Show/hide forms
+        document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+        document.getElementById(`${tab}-form`).classList.add('active');
+    }
+</script>
+{% endblock %}

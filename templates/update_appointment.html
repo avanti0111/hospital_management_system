@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3><i class="bi bi-pencil-square me-2"></i>Update Appointment</h3>
+    </div>
+    <div class="card-body">
+        <form method="POST" action="{{ url_for('update_appointment', appointment_id=appointment.id) }}">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label class="form-label">Doctor</label>
+                    <input type="text" class="form-control" value="{{ appointment.doctor.name }}" readonly>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Department</label>
+                    <input type="text" class="form-control" value="{{ appointment.doctor.department.name }}" readonly>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label for="appointment_date" class="form-label">Appointment Date</label>
+                    <input type="date" class="form-control" id="appointment_date" name="appointment_date" value="{{ appointment.appointment_date.strftime('%Y-%m-%d') }}" required min="{{ today }}">
+                </div>
+                <div class="col-md-6">
+                    <label for="appointment_time" class="form-label">Appointment Time</label>
+                    <input type="time" class="form-control" id="appointment_time" name="appointment_time" value="{{ appointment.appointment_time.strftime('%H:%M') }}" required>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label for="appointment_type" class="form-label">Appointment Type</label>
+                    <select class="form-select" id="appointment_type" name="appointment_type" required>
+                        <option value="Consultation" {% if appointment.appointment_type == 'Consultation' %}selected{% endif %}>Consultation</option>
+                        <option value="Follow-up" {% if appointment.appointment_type == 'Follow-up' %}selected{% endif %}>Follow-up</option>
+                        <option value="Check-up" {% if appointment.appointment_type == 'Check-up' %}selected{% endif %}>Check-up</option>
+                        <option value="Surgery" {% if appointment.appointment_type == 'Surgery' %}selected{% endif %}>Surgery</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="notes" class="form-label">Notes (Optional)</label>
+                    <textarea class="form-control" id="notes" name="notes" rows="1">{{ appointment.notes or '' }}</textarea>
+                </div>
+            </div>
+            
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check-circle me-2"></i>Update Appointment
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
